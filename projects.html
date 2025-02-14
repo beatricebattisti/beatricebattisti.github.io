@@ -1,0 +1,380 @@
+
+
+
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+
+    <title id="fullName"></title>
+
+
+
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+
+<!-- KaTeX scripts -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css" integrity="sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0" crossorigin="anonymous">
+  
+<!-- Font Awesome CDN -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+<style>
+    html,body {
+    background-image: url('img/magic-waves_bw.jpg'); /* Replace with your image URL */
+    background-repeat: repeat; /* Repeats the image both horizontally and vertically */
+    background-size: 200px 200px; /* Scales the image to 100px width and height */
+    background-position: top left; /* Position the repeated image */
+    background-color: #E3E7EB; /* Fallback color if the image doesn't load */
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  
+    .navbar {
+        background-color: #035158; /* Set the navbar background color to blue */
+    }
+    
+    .container {
+    background-color: rgba(255, 255, 255, 0.99); /* Semi-transparent white background */
+    padding: 20px; /* Add some padding inside the container */
+    border-radius: 10px; /* Add rounded corners for aesthetics */
+    margin-top: 20px; /* Space between navbar and container */
+    margin-bottom: 20px; /* Space between container and footer */
+    flex: 1; /* Makes the container grow to fill available space */
+  }
+  
+    .social-media-links a {
+        text-decoration: none; /* Removes underline */
+        transition: transform 0.3s ease; /* Adds a smooth effect when hovering */
+    }
+  
+    .social-media-links a:hover {
+        transform: scale(1.2); /* Enlarges the icon on hover */
+    }
+  
+    .highlight-box {
+        padding: 15px;
+        border: 2px solid #08468E; /* Blue border for emphasis */
+        background-color: #f3f1e9; /* Light blue background */
+        border-radius: 5px;
+    }
+
+    .back-to-top {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #000000; /* Button color */
+      color: white;
+      padding: 10px;
+      border-radius: 50%;
+      text-decoration: none;
+      text-align: center;
+      font-size: 20px; /* Adjust icon size */
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+      z-index: 1000;
+    }
+  
+    .back-to-top:hover {
+      background-color: #000000; /* Darker blue on hover */
+    }
+  
+    .back-to-top i {
+      margin: 0; /* Remove any extra margins */
+    }
+  
+  </style>
+
+</head>
+<body>
+
+<!-- Add this ID to your header or the very top element -->
+<div id="top"></div>
+  
+  
+<nav class="navbar navbar-expand-lg navbar-dark">
+	<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	  </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav  w-100 nav-justified me-auto">
+    <li class="nav-item active">
+          <a class="nav-link" href="index.html">Home</a>
+	</li>
+	<li class="nav-item active">
+          <a class="nav-link" href="projects.html">Research</a>
+	</li>
+    <li class="nav-item active">
+        <a class="nav-link" href="publications.html">Publications</a>
+  </li>
+  <li class="nav-item active">
+    <a class="nav-link" href="communication.html">Communication</a>
+</li>
+  <li class="nav-item active">
+    <a class="nav-link" href="contribution.html">Contribution</a>
+  </li>
+	<li class="nav-item active">
+          <a class="nav-link" href="CV.html">CV</a>
+	</li>
+
+    <!--<li class="nav-item active">
+        <a class="nav-link" href="demo.html" target="_blank">Demo</a>
+    </li>-->
+
+	</ul>
+	</div>	
+
+
+  </nav>
+  
+  <!-- Page Content -->
+    <div class="container">
+
+        <div class="row">
+
+
+            <!-- Projects -->
+            <div class="col-md-14" style="margin-top: 20px;" >    
+                <h2 id="projects">Numerical methods for multiphase flows</h2>
+                
+                <ul>
+                <p>The Baer-Nunziato system of equations is widely used for describing interacting compressible multi-phase flows. 
+                    A semi-implicit numerical scheme is developed for compressible two-phase flows at all Mach number regimes.
+                    A linearly implicit discretization is appied to the pressure fluxes and the relaxation source terms, whereas an explicit scheme
+                    is retained for the nonlinear convective contributions. Consequently, the CFL-type stability condition on the maximum admissible
+                    time step is based only on the mean flow velocity and not on the sound speed of each phase.
+                    Central finite difference operators on Cartesian grids are adopted for the implicit terms, 
+                    thus avoiding any need of numerical diffusion that might destroy accuracy in the low Mach number regime. 
+                    To comply with high Mach number flows, shock capturing finite volume schemes are employed for the approximation of the 
+                    convective fluxes. The discretization of the non-conservative terms ensures the preservation of moving equilibrium solutions, 
+                    making the new method well-balanced. The new scheme is also proven to be asymptotic preserving in the low Mach limit of the 
+                    mixture model. Second order of accuracy is achieved by means of an implicit-explicit (IMEX) time stepping algorithm combined 
+                    with a total variation diminishing (TVD) reconstruction technique. The scheme is tested on high Mach number flows, and is able to correctly 
+                    describe shock waves (see the bubble shock test, on the left). It is also tested on a compressible-incompressible two-flows case (like water and air), providing nice results (see the 3D water-air mixture problem, on the right).
+                </p>
+                <div class="col-md-10" style="display: flex; flex-direction: row; align-items: center;">
+                    <img src="data/num/bubble_shock_gif.gif" alt="Left Column Image" style="width:44%; margin-left: 80px; margin-right: 10px;"> 
+                    <img src="data/num/Air-Water-3D-t3-absus-eps-converted-to-1.png" alt="Right Column Image" style="width:44%; margin-left: 160px; margin-right: 10px;"> 
+                    </div>      
+                </ul>
+                
+                <h2 id="projects">Reduced Order Modeling</h2>
+
+                <ul>
+                <strong>POD and CFD for wave propagation</strong>
+                
+                <div class="row" >
+                <div class="col-md-6">
+                    <br><br>
+                    <video autoplay loop muted playsinline style="width:600px;">
+                        <source src="data/rom/sim_base_white.mp4" type=video/mp4>
+                        </video>       
+                </div>
+                <div class="col-md-6">
+                    <p>High-fidelity models, such as Computational Fluid Dynamics (CFD), provide accurate results for wave energy converters (WECs) simulations, 
+                        but are too computationally expensive. Projection-based model order reduction techniques, like Proper Orthogonal Decomposition (POD), 
+                        have demonstrated effectiveness in simulating single-phase flows, but encounter stability challenges with multi-phase flows. 
+                        Classical methods bypassing full-order models are not viable in this context. Thus, a multi-fidelity, Galerkin-free model is rather proposed, 
+                        combining CFD for accurately describing the WEC near-field (the red domain in the video), with POD for efficient far-field wave propagation modeling (the green domain, 
+                        which represents a zoom on the entire simulation domain). The two systems are coupled using a domain decomposition-inspired strategy, ensuring bidirectional 
+                        information exchange for precise flow reconstruction and accurate representation of the floater dynamics. In the video, the violet domains represent the total 
+                        support of the coupling technique, given by both the overlapping domain (around the sphere) and a sensor locations for the incoming wave. The ratio of the coupling 
+                        computational domain to the total simulation domain is 0.015%, pointing out the significant CPU savings. This approach has potential broader applications, 
+                        serving as an advanced far-field boundary condition in problems involving wave propagation.
+                    </p>                       
+                    </div>
+                </div>
+                <div class="row" >
+                    <div class="col-md-5">
+                        <p>Numerical results on different wave conditions prove the versatility of the coupling technique, both for in-sample reconstruction (IS, where the POD basis is 
+                            computed with a database from the baseline condition W0), and an out-of-sample prediction (OOS, where the POD basis is computed with a database from conditions 
+                            W1 and W2). The target wave W0, used as input in both the coupled model (hf+POD IS) and (hf+POD OOS) tests, has characteristics (wave height and wave period) equal 
+                            to the mean of the characteristics of the other two waves, W1 and W2. In the OOS case, the L2 relative errors are slightly higher than those in the IS case but 
+                            remain comparable, with all errors on the order of <span style="serif">𝒪(10<sup>−4</sup>)</span>. With only slight dissipation at the peaks and troughs, the IS 
+                            case's temporal evolution of the force and body position nearly matches the one in the reference high-fidelity (HF) solution. Although the overall behavior is 
+                            still accurate, there is a slightly larger difference between the reference and the predicted solution in the OOS case. In this case, there is an observable phase 
+                            shift and a higher degree of dissipation, which may be impacted by the time step selected. The phase shift is likely due to the training dataset containing wave 
+                            periods different from the target period. In addition to strong CPU savings, the computational time of the simulations passes from approximately 10 hours and 30 
+                            minutes on 48 processors, to less than 4 hours, using only 6 processors.
+                        </p>                       
+                        </div>
+                    <div class="col-md-7">
+                    <!--<img src="data/wec/dispo_array_line.png" alt="Left Column Image" style="width:30%;"> 
+                        <video autoplay loop muted id="video2" style="width:250px;"><source src="data/wec/pareto_B5L.mp4" type="video/mp4"></video>
+                        <video autoplay loop muted id="video3" style="width:250px;"><source src="data/wec/pareto_C5L.mp4" type="video/mp4"></video>
+                        <img src="data/wec/dispo_array_stag.png" alt="Left Column Image" style="width:30%;"> 
+                        <video autoplay loop muted id="video4" style="width:250px;"><source src="data/wec/pareto_B5S.mp4" type="video/mp4"></video>
+                        <video autoplay loop muted id="video5" style="width:250px;"><source src="data/wec/pareto_C5S.mp4" type="video/mp4"></video>-->
+                        <br><br>
+                        <img src="data/rom/sphere_onda.gif" alt="gif1" style="width:250px; margin-left: -10px; margin-right: 0px;">  
+                        <img src="data/rom/force_body_white.gif" alt="gif2" style="width:250px; margin-left: -10px; margin-right: -10px;">  
+                        <img src="data/rom/translation_body_white.gif" alt="gif3" style="width:250px; margin-left: -10px; margin-right: -10px;">
+                        <div style="height:40px;"></div>
+                        <br>
+                        <img src="data/rom/sphere_onda_ab.gif" alt="gif4" style="width:250px; margin-left: -10px; margin-right: 0px;">  
+                        <img src="data/rom/force_body_white_ab.gif" alt="gif5" style="width:250px; margin-left: -10px; margin-right: -10px;">  
+                        <img src="data/rom/translation_body_white_ab.gif" alt="gif6" style="width:250px; margin-left: -10px; margin-right: -10px;">
+                    </div>                                                  
+                </div>         
+                <br>
+                <strong>Wasserstein ROM for porous media</strong>
+                
+                <div class="row" >
+                    <div class="col-md-5">
+                        <br>
+                <p>Constructing a reduced model for parametric flow problems in porous media is non-trivial. As the Kolmogorov width decays slowly for this kind of problems, traditional linear 
+                    model reduction methods (such as the POD) are ineffective. To reduce the computational cost of such simulations, therefore, the use of nonlinear model reduction methods
+                    is necessary. A reduced-order model based on Wasserstein barycenters and a greedy algorithm is developed for the transport, non-conservative problem a two-phase flow 
+                    passing through porous rocks. Possible applications may be in geoscience, hydrogeology or underground gas storage. 
+                    One-dimensional numerical tests compare this approach with the POD method. In one case, the medium is considered homogeneous and the viscosity and permeability are varied, 
+                    while in the other case, the porous medium is heterogeneous, composed of two different rock types, but viscosity and permeability of the flow are kept constant. In both cases,
+                    the POD needs several basis functions to obtain a satisfying result, while the barycenter method keeps the computational cost lower.
+                    </p>
+                </div>
+                <div class="col-md-7" style="display: flex; flex-direction: column; align-items: center;">
+                    <img src="data/rom/wassersteinrom1.png" alt="Left Column Image" style="width:51%; margin-left: 20px; margin-right: 10px;"> 
+                    <img src="data/rom/wassersteinrom2.png" alt="Right Column Image" style="width:51%; margin-left: 20px; margin-right: 10px;"> 
+                    </div>      
+                
+              
+                <h2 id="projects">Wave energy</h2>
+
+                <ul>
+                <strong>Potential synergies between power production and coastal protection</strong>
+                <p></p>
+                <p>
+                Joining efforts to promote both power generation and coastal protection would offer significant advantages for the marine sector. 
+                It represents an opportunity to combine resources for the dual purpose of adapting to the effects of climate change, 
+                and producing clean energy, thereby potentially fostering growth in the blue economy. Wave Energy Converters (WECs), 
+                and particularly WEC farms, are ideally suited to fulfill this dual role, as they can harvest energy from waves, 
+                thus also mitigating their impact on coastlines, with the generation of milder waves in their lee.
+                Although usually seen just as a secondary result, normally overshadowed by energy production, the coastal protection 
+                by-product of WEC farms may be the decisive factor in the decision-making process.</p>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div style="height:20px;"></div>
+                        <p>Different technologies, characterized by different shape, size, working principle, may give very different results. Taking, for instance, the OSWC
+                            (Oscillating Surge Wave Converter) type, the disturbance coefficient <span style="serif">K<sub>d</sub></span> can be computed on a square domain using potential theory. 
+                            Defined as the ratio of the total perturbed free surface elevation amplitude over the undisturbed one, it shows the lee of a WEC farm, and the consequences of 
+                            WEC interactions on the waves. However, it may be difficult to uniquely define a wake, in such a way as to make it a measurable parameter, just as done with 
+                            power production. One possibility is to define a wake width W as the length of the continuous zone where all points in the domain have a value of 
+                            <span style="serif">K<sub>d</sub> ≤ 0.9</span>, which represents the 10% wave attenuation.
+                        </p>
+                        </div>
+                        <div class="col-md-6">
+                            <img src="data/wec/wake.png" alt="Left Column Image" style="width:90%;">                           
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-7">
+                            <br>
+                        <!--<img src="data/wec/dispo_array_line.png" alt="Left Column Image" style="width:30%;"> 
+                            <video autoplay loop muted id="video2" style="width:250px;"><source src="data/wec/pareto_B5L.mp4" type="video/mp4"></video>
+                            <video autoplay loop muted id="video3" style="width:250px;"><source src="data/wec/pareto_C5L.mp4" type="video/mp4"></video>
+                            <img src="data/wec/dispo_array_stag.png" alt="Left Column Image" style="width:30%;"> 
+                            <video autoplay loop muted id="video4" style="width:250px;"><source src="data/wec/pareto_B5S.mp4" type="video/mp4"></video>
+                            <video autoplay loop muted id="video5" style="width:250px;"><source src="data/wec/pareto_C5S.mp4" type="video/mp4"></video>-->
+                            <img src="data/wec/dispo_array_line.png" alt="Left Column Image" style="width:30%; margin-right: -20px; margin-left: -20px;"> 
+                            <img src="data/wec/pareto_B5L.gif" alt="Simulation Animation" style="width:250px; margin-left: -20px;">  
+                            <img src="data/wec/pareto_C5L.gif" alt="Simulation Animation" style="width:250px; margin-left: 2px;">
+                            <div style="height:20px;"></div>
+                            <img src="data/wec/dispo_array_stag.png" alt="Left Column Image" style="width:30%; margin-right: -20px; margin-left: -20px;"> 
+                            <img src="data/wec/pareto_B5S.gif" alt="Simulation Animation" style="width:250px; margin-left: -20px;">  
+                            <img src="data/wec/pareto_C5S.gif" alt="Simulation Animation" style="width:250px; margin-left: 2px;">
+                        </div>       
+                                                                 
+                        <div class="col-md-5">
+                            <br><br>
+                        <p>To understand the possible synergies between power production and coastal protection, different optimization approaches are possible. For example, 
+                            one could try to maximize both wave attenuation and power production, as independent goals, or compute the maximum power that can be generated under 
+                            the constaint of a minimum wave attenuation (like the 10%). However, such strategies are sub-optimal, since the PTO (Power Take-Off) configurations, 
+                            for the damping <span style="serif">B<sub>PTO</sub></span> and stiffness <span style="serif">C<sub>PTO</sub></span>, would not reach convergence to a best, shared
+                            value. A better technique would be a simultaneous optimization of both targets, leading to a Pareto front. This approach allows the exploration of the trade-offs 
+                            between the two competing objectives. In this case, the PTO parameters can be tuned in a way as to find synergies (the colored points). Different values may be
+                        found for different WEC farm layouts, linear (L) or staggered (S).</p>                       
+                        </div>
+                    </div>
+                    <br>
+                <strong>Numerical simulation of WEC farms</strong>
+                <p></p>
+                <div class="row">
+                    <div class="col-md-12">
+                    The maximization of the power output of an array of wave energy converters (WECs) and its impact on the surrounding area are two fundamental, strictly 
+                            interconnected, aspects that must be both considered in the design of a WEC farm. Such a multi-objective study of a WEC farm needs to account for the fluid-structure 
+                            interactions of every WEC, the WEC-WEC interactions inside the farm, and its propagation in the far-field. This diversity of scales and flow dynamics motivates a 
+                            separation of the computational domain into subdomains, where the most appropriate solver can be chosen.</div>
+                    <div class="col-md-5">
+                        <p> The numerical simulations are performed using a coupled model between the BEM solver Capytaine (near-field solution), and the wave propagation model MILDwave 
+                            (far-field solution). For the tests, a small farm is located off the coast of Pantelleria Island and is composed of three PeWECs, WECs designed for the Mediterranean Sea. 
+                            Two cases are simulated, for WEC interdistances d = 5L and d = 20L, with L being the characteristic WEC length. The tested wave conditions are typical for the winter 
+                            season around Pantelleria. A commonly used metric for evaluating power production is the q-factor, defined as the ratio between the actual productivity of the farm and 
+                            an idealized scenario where interactions between devices are disregarded. In this case, the q-factor is around 1.1 for the d = 5L case, and slightly less than unity for 
+                            the d = 20L case. The perturbed wave field around the PeWEC farm is compared to the single device, and for the controlled (with a PTO), and uncontrolled cases. 
+                            The wake produced by the PeWEC farm is more prominent and more complex with respect to the single device. Moreover, the inclusion of the PTO contributes to further attenuate 
+                            the wave field in the lee of the PeWEC farm. 
+                        </p>                       
+                        </div>
+                    <div class="col-md-7" style="display: flex; align-items: center;">
+                    <img src="data/wec/nearfield_winter.png" alt="Left Column Image" style="width:44%; margin-left: 20px; margin-right: 10px;"> 
+                    <img src="data/wec/farfield_winter.png" alt="Right Column Image" style="width:44%; margin-left: 20px; margin-right: 10px;"> 
+                    </div>                                                  
+                </div>
+            </ul>   
+
+         </div>
+         </div>
+
+ 
+            
+    </div>
+ 
+<!-- Back to Top Button -->
+<!-- Back to Top Button with Icon -->
+<a href="#top" class="back-to-top" title="Back to top">
+    <i class="fas fa-arrow-up"></i>
+  </a>
+  
+
+  <footer style="background-color: rgba(3, 81, 88, 0.99); padding: 10px 0; margin-top: 20px;">
+    <div class="social-media-links" style="text-align:center; justify-content: space-between; display: flex; width: 50%; margin: 0 auto;">
+        <a href="https://www.linkedin.com/in/bbattisti" target="_blank" title="LinkedIn">
+            <i class="fab fa-linkedin" style="font-size: 30px; margin: 0 15px; color: #0077B5;"></i>
+        </a>
+        <a href="https://orcid.org/0000-0001-5918-6055" target="_blank" title="ORCID">
+            <i class="fab fa-orcid" style="font-size: 30px; margin: 0 15px; color: #A6CE39;"></i>
+        </a>
+        <a href="https://www.researchgate.net/profile/Beatrice_Battisti3" target="_blank" title="ResearchGate">
+            <i class="fab fa-researchgate" style="font-size: 30px; margin: 0 15px; color: #00CC99;"></i>
+        </a>
+        <a href="https://scholar.google.com/citations?user=8DjT-SMAAAAJ&hl=it" target="_blank" title="Google Scholar">
+            <i class="fab fa-google" style="font-size: 30px; margin: 0 15px; color: #DB4437;"></i>
+        </a>
+    </div>
+    <p style="text-align: center; margin: 10px 0; font-size: 14px; color: #f3f1e9;"> 
+        <span id="footerName"></span> Copyright © 2024 
+    </p>
+</footer>
+ 
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+    
+    
+<script type="text/javascript" src="user_id.js"></script>
+
+
+</body>
+
+
+
+</html>

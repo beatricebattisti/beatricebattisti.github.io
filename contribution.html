@@ -1,0 +1,475 @@
+
+
+
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+
+    <title id="fullName"></title>
+
+
+
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+
+<!-- KaTeX scripts -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css" integrity="sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0" crossorigin="anonymous">
+
+
+
+<!-- Font Awesome CDN for Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+
+
+<style>
+  html,body {
+  background-image: url('img/magic-waves_bw.jpg'); /* Replace with your image URL */
+  background-repeat: repeat; /* Repeats the image both horizontally and vertically */
+  background-size: 200px 200px; /* Scales the image to 100px width and height */
+  background-position: top left; /* Position the repeated image */
+  background-color: #E3E7EB; /* Fallback color if the image doesn't load */
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+  .navbar {
+      background-color: #035158; /* Set the navbar background color to blue */
+  }
+  
+  .container {
+  background-color: rgba(255, 255, 255, 0.99); /* Semi-transparent white background */
+  padding: 20px; /* Add some padding inside the container */
+  border-radius: 10px; /* Add rounded corners for aesthetics */
+  margin-top: 20px; /* Space between navbar and container */
+  margin-bottom: 20px; /* Space between container and footer */
+  flex: 1; /* Makes the container grow to fill available space */
+}
+
+  .social-media-links a {
+      text-decoration: none; /* Removes underline */
+      transition: transform 0.3s ease; /* Adds a smooth effect when hovering */
+  }
+
+  .social-media-links a:hover {
+      transform: scale(1.2); /* Enlarges the icon on hover */
+  }
+
+  .highlight-box {
+      padding: 15px;
+      border: 2px solid #08468E; /* Blue border for emphasis */
+      background-color: #f3f1e9; /* Light blue background */
+      border-radius: 5px;
+  }
+
+  .custom-list {
+    list-style: none;
+    padding: 0;
+  }
+
+  /* Style the year with a tilde before */
+  .custom-item::before {
+    content: "~ ";
+    font-weight: bold;
+  }
+
+  /* Indent event details */
+  .event-details {
+    margin-left: 20px; /* Indentation */
+  }
+
+  /* Add a bullet point before event details */
+  .event-details::before {
+    content: "• ";
+    font-weight: bold;
+  }
+
+
+    /*.map-container {
+    position: relative;
+    width: 100%;
+    height: 400px; 
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display: flex;   
+  justify-content: center;  
+  align-items: center;      
+  }
+
+  .node {
+    position: absolute;
+    padding: 20px;
+    background-color: #d0e8ff;
+    border: 2px solid #13ec13;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 16px;
+  } */
+
+  /* .node1 { top: 35%; left: 10%; }
+  .node2 { top: 65%; left: 35%; }
+  .node3 { top: 35%; left: 59%; }
+  .node4 { top: 65%; left: 80%; }
+  .node21 { top: 5%; left: 35%; }
+  .node22 { top: 85%; left: 10%; }
+  .node31 { top: 0%; left: 68%; }
+  .node32 { top: 90%; left: 66%; } 
+
+  .node1 { top: 25%; left: 20%; }
+  .node2 { top: 45%; left: 43%; }
+  .node3 { top: 75%; left: 58%; }
+  .node4 { top: 15%; left: 66%; }
+  .node21 { top: 45%; left: 2%; }
+  .node22 { top: 75%; left: 18%; }
+  .node31 { top: 85%; left: 78%; }
+  .node32 { top: 0%; left: 83%; } */
+
+  /* .line {
+    position: absolute;
+    border-top: 2px solid #087ef3;
+    width: 100px;
+    transform-origin: top left;
+  } */
+
+  /* .line1 { top: 30%; left: 25%; transform: rotate(-30deg); width: 130px; }
+  .line2 { top: 25%; left: 40%; transform: rotate(80deg); width: 150px; }
+  .line3 { top: 55%; left: 17%; transform: rotate(95deg); width: 100px; }
+  .line4 { top: 91%; left: 23%; transform: rotate(-25deg); width: 140px; }
+  .line5 { top: 60%; left: 45%; transform: rotate(-37deg); width: 340px; }
+  .line6 { top: 32%; left: 70%; transform: rotate(-60deg); width: 60px; }
+  .line7 { top: 55%; left: 65%; transform: rotate(60deg); width: 150px; }
+  .line8 { top: 93%; left: 76%; transform: rotate(-30deg); width: 70px; } */
+
+   /*.line1 { top: 35%; left: 37%; transform: rotate(45deg); width: 90px; }
+  .line2 { top: 85%; left: 73%; transform: rotate(35deg); width: 60px; }
+  .line3 { top: 50%; left: 12%; transform: rotate(-36deg); width: 105px; }
+  .line4 { top: 72%; left: 25%; transform: rotate(-80deg); width: 110px; }
+  .line5 { top: 50%; left: 58%; transform: rotate(-50deg); width: 130px; }
+  .line6 { top: 20%; left: 78%; transform: rotate(-40deg); width: 60px; }
+  .line7 { top: 65%; left: 56%; transform: rotate(70deg); width: 50px; }
+  /*.line8 { top: 93%; left: 76%; transform: rotate(-30deg); width: 70px; } */ 
+
+
+  .map-container {
+  position: relative;
+  width: 100%;
+  height: 500px; /* Adjust height as needed */
+  margin-top: 20px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Default node styling */
+.node {
+  position: absolute;
+  padding: 20px;
+  border: 2px solid black;
+  text-align: center;
+  font-size: 16px;
+}
+
+/* Oval nodes */
+.node-oval {
+  border-radius: 20px; /* Makes the shape oval */
+  background-color: #C9A0DC; /* Light blue */
+  border-color: #0056b3; /* Dark blue border */
+}
+
+/* Green nodes */
+.node-green {
+  background-color: #F4C431; /* Light green */
+  border-color: #008000; /* Dark green */
+}
+
+/* Red nodes */
+.node-red {
+  background-color: #F1DDCF; /* Light red */
+  border-color: #B22222; /* Dark red */
+}
+
+/* Positioning nodes */
+.node1 { top: 25%; left: 20%; }
+.node2 { top: 45%; left: 43%; }
+.node3 { top: 75%; left: 58%; }
+.node4 { top: 15%; left: 66%; }
+.node21 { top: 45%; left: 2%; }
+.node22 { top: 75%; left: 18%; }
+.node31 { top: 85%; left: 78%; }
+.node32 { top: 0%; left: 83%; }
+
+/* Extra text outside nodes */
+.extra-text {
+  position: absolute;
+  font-size: 14px;
+  color: black;
+}
+
+/* Example text positions */
+.text1 { top: 14%; left: 84%; }  /* Near WEC farms */
+.text2 { top: 18%; left: 84%; } /* Near WEC farms */
+.text3 { top: 87%; left: 91%; } /* Near All mach solvers */
+.text4 { top: 53%; left: 11%; } /* Near ROM water/air */
+.text5 { top: 78%; left: 10%; } /* Near ROM porous */
+
+/* Styling curved lines */
+.svg-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; /* Ensures SVG is non-interactive */
+}
+
+svg {
+  width: 100%;
+  height: 100%;
+}
+
+path {
+  stroke-width: 1.5;
+  fill: none;
+  stroke: #060606; /* Default blue */
+}
+
+.back-to-top {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #000000; /* Button color */
+      color: white;
+      padding: 10px;
+      border-radius: 50%;
+      text-decoration: none;
+      text-align: center;
+      font-size: 20px; /* Adjust icon size */
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+      z-index: 1000;
+    }
+  
+    .back-to-top:hover {
+      background-color: #000000; /* Darker blue on hover */
+    }
+  
+    .back-to-top i {
+      margin: 0; /* Remove any extra margins */
+    }
+
+
+
+
+
+
+
+
+
+</style>
+
+
+
+</head>
+<body>
+
+
+  
+  
+  <nav class="navbar navbar-expand-lg navbar-dark">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	  </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav  w-100 nav-justified me-auto">
+    <li class="nav-item active">
+          <a class="nav-link" href="index.html">Home</a>
+	</li>
+	<li class="nav-item active">
+          <a class="nav-link" href="projects.html">Research</a>
+	</li>
+	<li class="nav-item active">
+    <a class="nav-link" href="publications.html">Publications</a>
+  </li>	
+  <li class="nav-item active">
+    <a class="nav-link" href="communication.html">Communication</a>
+</li>
+  <li class="nav-item active">
+    <a class="nav-link" href="contribution.html">Contribution</a>
+  </li>
+	<li class="nav-item active">
+          <a class="nav-link" href="CV.html">CV</a>
+	</li>
+
+  <!--<li class="nav-item active">
+    <a class="nav-link" href="demo.html" target="_blank">Demo</a>
+  </li>-->
+
+	</ul>
+	</div>	
+
+
+  </nav>
+  
+ 
+  
+  <!-- Page Content -->
+    <div class="container">
+
+<!--         <div class="row"> -->
+
+               
+
+           
+<!-- Contribution -->
+<div class="col-md-12" style="margin-top: 20px;" >   
+  
+  <!-- teaching -->
+<h2 id="teaching">Teaching activities</h2>
+
+<ul>
+<li class="paper" words="add, your, keywords, here"> 2023-2024 (1st semester): Enseirb-Matmeca (Bordeaux)</li>
+<p>Supervision of the practical sessions of the course "Algorithm and Programming in Fortran 90"</p>
+</ul>
+<ul> 
+<li class="paper" words="add, your, keywords, here"> 2022-2023 (2nd semester): Enseirb-Matmeca (Bordeaux)</li>
+<p>Supervision of the practical sessions of the course "Algorithm and Programming in Fortran 90"</p> 
+</ul>
+  
+<!-- collaborations -->
+<h2 id="collaborations">Projects and Collaborations</h2>
+
+<ul class="custom-list">
+  <li class="custom-item">2023:</li>
+  <li class="event-details">
+    Secondment for the ARIA (Accurate ROMs for Industrial Applications) project, at Optimad Srl (Turin, Italy) |   
+    Body-less approach for the numerical modeling of wave energy converters <br>
+  </li>
+
+  <li class="custom-item">2022:</li>
+  <li class="event-details">
+    WECANet Short Term Scientific Mission (STSM) at Ghent University (Ghent, Belgium)  |
+    Numerical modeling of the far-field effects of a PeWEC farm <br>
+  </li>
+
+  <li class="custom-item">2021:</li>
+  <li class="event-details">
+    Research project in the context of the summer school CEMRACS 2021 at CIRM (Luminy, France) |
+    Model Order Reduction of one-dimensional non-linear transport PDEs in porous media <br>
+  </li>
+</ul>
+
+
+ <!-- Conceptual Map -->
+<!-- <div class="map-container">
+  <div class="node node1">Reduced Order Models</div>
+  <div class="node node2">Multi-phase Flows</div>
+  <div class="node node3">Numerical Schemes</div>
+  <div class="node node4">Wave Energy</div>
+
+  <div class="node node21">Water/air</div>
+  <div class="node node22">Porous media</div>
+  <div class="node node31">All-Mach Solvers</div>
+  <div class="node node32">WEC farms</div>
+
+  <div class="line line1"></div>
+  <div class="line line2"></div>
+  <div class="line line3"></div>
+  <div class="line line4"></div>
+  <div class="line line5"></div>
+  <div class="line line6"></div>
+  <div class="line line7"></div>
+  <div class="line line8"></div> 
+</div> -->
+
+
+<!-- Conceptual Map -->
+<div class="map-container">
+  <!-- Nodes with different colors & shapes -->
+  <div class="node node-oval node1">Reduced Order Models</div>
+  <div class="node node-green node2">Multi-phase Flows</div>
+  <div class="node node-oval node3">Numerical Schemes</div>
+  <div class="node node-oval node4">Wave Energy</div>
+
+  <div class="node node-red node21">Water/air</div>
+  <div class="node node-red node22">Porous media</div>
+  <div class="node node-red node31">All-Mach Solvers</div>
+  <div class="node node-red node32">WEC farms</div>
+
+  <!-- Extra text outside nodes -->
+  <div class="extra-text text1"><a href="https://www.polito.it/personale?p=giuseppe.giorgi">Giuseppe Giorgi</a></div>
+  <div class="extra-text text2"><a href="https://www.tu-braunschweig.de/en/lwi/hyku/staff/verao">Gael Verao Fernandez</a></div>
+  <div class="extra-text text3"><a href="https://scholar.google.com.tw/citations?user=ju_xIOQAAAAJ&hl=it">Walter Boscheri</a></div>
+  <div class="extra-text text4"><a href="https://www.math.u-bordeaux.fr/~mbergman/">Michel Bergmann</a></div>
+  <div class="extra-text text5"><a href="https://scholar.google.com/citations?user=laUsV00AAAAJ&hl=en">Tobias Blickhan</a></div>
+
+  <!-- Curved Lines Using SVG -->
+  <div class="svg-container">
+    <svg>
+      <!-- Define curved paths -->
+      <path d="M 480 160 Q 570 130, 610 210" stroke="#087ef3"/>  
+      <path d="M 650 210 Q 630 130, 830 110" stroke="red"/>
+      <path d="M 630 310 Q 650 430, 720 410" stroke="green"/>
+      <path d="M 990 110 C 1020 130, 1020 30, 1050 40" stroke="green"/>
+      <path d="M 940 410 C 950 400, 960 450, 980 460" stroke="green"/>
+      <path d="M 240 160 C 200 140, 180 280, 150 260" stroke="green"/>
+      <path d="M 390 210 C 400 300, 300 280, 300 360" stroke="green"/>
+    </svg>
+  </div>
+</div>
+
+
+   
+  </div>
+
+           
+</div>
+
+<!-- Back to Top Button -->
+<!-- Back to Top Button with Icon -->
+<a href="#top" class="back-to-top" title="Back to top">
+  <i class="fas fa-arrow-up"></i>
+</a>
+
+<footer style="background-color: rgba(3, 81, 88, 0.99); padding: 10px 0; margin-top: 20px;">
+  <div class="social-media-links" style="text-align:center; justify-content: space-between; display: flex; width: 50%; margin: 0 auto;">
+      <a href="https://www.linkedin.com/in/bbattisti" target="_blank" title="LinkedIn">
+          <i class="fab fa-linkedin" style="font-size: 30px; margin: 0 15px; color: #0077B5;"></i>
+      </a>
+      <a href="https://orcid.org/0000-0001-5918-6055" target="_blank" title="ORCID">
+          <i class="fab fa-orcid" style="font-size: 30px; margin: 0 15px; color: #A6CE39;"></i>
+      </a>
+      <a href="https://www.researchgate.net/profile/Beatrice_Battisti3" target="_blank" title="ResearchGate">
+          <i class="fab fa-researchgate" style="font-size: 30px; margin: 0 15px; color: #00CC99;"></i>
+      </a>
+      <a href="https://scholar.google.com/citations?user=8DjT-SMAAAAJ&hl=it" target="_blank" title="Google Scholar">
+          <i class="fab fa-google" style="font-size: 30px; margin: 0 15px; color: #DB4437;"></i>
+      </a>
+  </div>
+  <p style="text-align: center; margin: 10px 0; font-size: 14px; color: #f3f1e9;"> 
+      <span id="footerName"></span> Copyright © 2024 
+  </p>
+</footer>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+    
+    
+<script type="text/javascript" src="user_id.js"></script>
+
+
+</body>
+
+
+
+</html>
