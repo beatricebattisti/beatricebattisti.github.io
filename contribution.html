@@ -200,14 +200,15 @@
 }
 
 /* Positioning nodes */
-.node1 { top: 25%; left: 20%; }
+.node1 { top: 5%; left: 20%; }
 .node2 { top: 45%; left: 43%; }
 .node3 { top: 75%; left: 58%; }
 .node4 { top: 15%; left: 66%; }
-.node21 { top: 45%; left: 2%; }
-.node22 { top: 75%; left: 18%; }
+.node21 { top: 25%; left: 2%; }
+.node22 { top: 45%; left: 18%; }
 .node31 { top: 85%; left: 78%; }
 .node32 { top: 0%; left: 83%; }
+.node33 { top: 85%; left: 25%; }
 
 /* Extra text outside nodes */
 .extra-text {
@@ -220,8 +221,12 @@
 .text1 { top: 14%; left: 84%; }  /* Near WEC farms */
 .text2 { top: 18%; left: 84%; } /* Near WEC farms */
 .text3 { top: 87%; left: 91%; } /* Near All mach solvers */
-.text4 { top: 53%; left: 11%; } /* Near ROM water/air */
-.text5 { top: 78%; left: 10%; } /* Near ROM porous */
+.text4 { top: 34%; left: 11%; } /* Near ROM water/air */
+.text5 { top: 52%; left: 10%; } /* Near ROM porous */
+.text6 { top: 86%; left: 17%; } /* Near cROM */
+.text7 { top: 90%; left: 13%; } /* Near cROM */
+.text8 { top: 94%; left: 19%; } /* Near cROM */
+
 
 /* Styling curved lines */
 .svg-container {
@@ -439,8 +444,9 @@ path {
 
   <div class="node node-red node21">Water/air</div>
   <div class="node node-red node22">Porous media</div>
-  <div class="node node-red node31">All-Mach Solvers</div>
+  <div class="node node-red node31">All-Mach solvers</div>
   <div class="node node-red node32">WEC farms</div>
+  <!--<div class="node node-red node33">All-regime cROMs</div>-->
 
   <!-- Extra text outside nodes -->
   <div class="extra-text text1"><a href="https://www.polito.it/personale?p=giuseppe.giorgi">Giuseppe Giorgi</a></div>
@@ -448,18 +454,23 @@ path {
   <div class="extra-text text3"><a href="https://scholar.google.com.tw/citations?user=ju_xIOQAAAAJ&hl=it">Walter Boscheri</a></div>
   <div class="extra-text text4"><a href="https://www.math.u-bordeaux.fr/~mbergman/">Michel Bergmann</a></div>
   <div class="extra-text text5"><a href="https://scholar.google.com/citations?user=laUsV00AAAAJ&hl=en">Tobias Blickhan</a></div>
+  <!--<div class="extra-text text6"><a href="https://scholar.google.com.tw/citations?user=ju_xIOQAAAAJ&hl=it">Walter Boscheri</a></div>
+  <div class="extra-text text7"><a href="">Michele Giuliano Carlino</a></div>
+  <div class="extra-text text8"><a href="">Angelo Iollo</a></div>-->
 
   <!-- Curved Lines Using SVG -->
   <div class="svg-container">
     <svg>
       <!-- Define curved paths -->
-      <path d="M 480 160 Q 570 130, 610 210" stroke="#087ef3"/>  
+      <path d="M 480 60 Q 570 30, 610 210" stroke="#087ef3"/>  
       <path d="M 650 210 Q 630 130, 830 110" stroke="red"/>
       <path d="M 630 310 Q 650 430, 720 410" stroke="green"/>
       <path d="M 990 110 C 1020 130, 1020 30, 1050 40" stroke="green"/>
       <path d="M 940 410 C 950 400, 960 450, 980 460" stroke="green"/>
-      <path d="M 240 160 C 200 140, 180 280, 150 260" stroke="green"/>
-      <path d="M 390 210 C 400 300, 300 280, 300 360" stroke="green"/>
+      <path d="M 240 60 C 200 40, 180 180, 150 160" stroke="green"/>
+      <path d="M 390 110 C 400 200, 300 180, 300 210" stroke="green"/>
+      <!--<path d="M 440 100 C 500 190, 360 250, 420 410" stroke="green"/>
+      <path d="M 500 470 C 550 500, 750 520, 800 450" stroke="green"/>-->
     </svg>
   </div>
 </div>
@@ -493,7 +504,7 @@ path {
       </a>
   </div>
   <p style="text-align: center; margin: 10px 0; font-size: 14px; color: #f3f1e9;"> 
-      <span id="footerName"></span> Copyright © Last update: January 2026  
+      <span id="footerName"></span> Copyright © Last update: March 2026  
   </p>
 </footer>
 
