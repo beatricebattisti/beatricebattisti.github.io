@@ -160,10 +160,15 @@
                     with a total variation diminishing (TVD) reconstruction technique. The scheme is tested on high Mach number flows, and is able to correctly 
                     describe shock waves (see the bubble shock test, on the left). It is also tested on a compressible-incompressible two-flows case (like water and air), providing nice results (see the 3D water-air mixture problem, on the right).
                 </p>
-                <div class="col-md-10" style="display: flex; flex-direction: row; align-items: center;">
-                    <img src="data/num/bubble_shock_gif.gif" alt="Left Column Image" style="width:44%; margin-left: 80px; margin-right: 10px;"> 
-                    <img src="data/num/Air-Water-3D-t3-absus-eps-converted-to-1.png" alt="Right Column Image" style="width:44%; margin-left: 160px; margin-right: 10px;"> 
-                    </div>      
+                <div class="row align-items-center justify-content-center g-3">
+                <div class="col-12 col-md-5 text-center">
+                <img src="data/num/bubble_shock_gif.gif" alt="Left Column Image" class="img-fluid"> 
+                </div>
+                <div class="col-12 col-md-5 text-center">
+                <img src="data/num/Air-Water-3D-t3-absus-eps-converted-to-1.png" alt="Right Column Image" class="img-fluid"> 
+                </div>
+                </div>
+
                 </ul>
                 
                 <h2 id="rom">Reduced Order Modeling</h2>
@@ -172,17 +177,51 @@
 
                 <strong>IMEX collocated ROM for multiscale PDEs</strong>
 
-                <p>TBA</p>
+                <div class="row" >
+                <div class="col-md-6">
+                <p>Many physical phenomena are governed by nonlinear partial differential equations whose solutions span a wide range of spatial and temporal scales. 
+                To handle these stiff multiscale problems efficiently, Implicit-Explicit (IMEX) time integration relaxes tight time-step constraints by decoupling fast 
+                and slow dynamics, while collocation-based reduced order models (cROMs) drastically reduce spatial computation by evaluating high-fidelity physics on only 
+                a small subset of mesh cells. A non-negative least squares (NNLS) algorithm is used to locate these "collocated" cells and compute their associated weights ω. 
+                As illustrated using an explanatory test case, the grey curves represent the initial and final solution snapshots across the parameter space (left axis), 
+                with the grey lines indicating the regions where solutions evolve over time. The blue markers highlight the centers of the selected collocated cells, 
+                with their corresponding weights displayed on the right axis.</p>
+                </div>
+                <div class="col-md-6">
+                    <img src="data/rom/fig_collocatedpoints.png" alt="Left Column Image" style="width:92%; margin-left: 20px; margin-right: 10px;"> 
+                </div>
+                </div>
+                <p>We combine IMEX time integration and cROM spatial reduction into a unified framework for stiff, multiscale parametric problems. 
+                The resulting scheme delivers accurate, low-cost simulations across both in-sample and out-of-sample regimes. 
+                We validate the model on 1D advection-diffusion problems with nonlinear fluxes and variable viscosity, verify that the Asymptotic Preserving (AP) 
+                property holds at the reduced level for low-Froude shallow water equations, and demonstrate its robustness on 2D unstructured meshes for discontinuous dam-break flows. 
+                Below are the computed solutions of this last test case, for the different variables, using the IMEXcROM scheme.</p>
+                <div class="col-md-12" style="display: flex; flex-direction: row; align-items: center; justify-content: space-between; gap: 15px;">
+                <video autoplay loop muted playsinline style="width: 32%; height: auto;">
+                <source src="data/rom/unstructured3d_h.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+                </video>
+                <video autoplay loop muted playsinline style="width: 32%; height: auto;">
+                <source src="data/rom/unstructured3d_hu.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+                </video>
+                <video autoplay loop muted playsinline style="width: 32%; height: auto;">
+                <source src="data/rom/unstructured3d_hv.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+                </video>
+
+</div>
 
                 <strong>POD and CFD for wave propagation</strong>
                 
                 <div class="row" >
-                <div class="col-md-6">
-                    <br><br>
-                    <video autoplay loop muted playsinline style="width:600px;">
-                        <source src="data/rom/sim_base_white.mp4" type=video/mp4>
-                        </video>       
+                <div class="col-12 col-md-6 mt-4 text-center">
+                <video autoplay loop muted playsinline class="img-fluid rounded">
+                <source src="data/rom/sim_base_white.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+                </video>       
                 </div>
+                
                 <div class="col-md-6">
                     <p>High-fidelity models, such as Computational Fluid Dynamics (CFD), provide accurate results for wave energy converters (WECs) simulations, 
                         but are too computationally expensive. Projection-based model order reduction techniques, like Proper Orthogonal Decomposition (POD), 
@@ -370,7 +409,7 @@
         </a>
     </div>
     <p style="text-align: center; margin: 10px 0; font-size: 14px; color: #f3f1e9;"> 
-        <span id="footerName"></span> Copyright © Last update: April 2026  
+        <span id="footerName"></span> Copyright © Last update: October 2026  
     </p>
 </footer>
  
